@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<!-- 3.-Mostrar por la consola los cien primeros números primos.-->
+	<body>
+		<script type="text/javascript" >
+		var primo;
+		var numeroPrimos = 0;
+		var numero = 0;
+		var i;
+		
+while (numeroPrimos<100){
+	numero+=1;
+			primo=true;
+			i=2;
+			while (primo && i<=numero/2){
+			if (numero%i==0) {
+			primo=false;
+			}
+			i+=1;
+		}
+		
+			if (primo) 
+			console.log(i+` es primo`)
+			
+	
+		}
+		</script>
+	</body>
+</html>

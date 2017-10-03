@@ -1,0 +1,29 @@
+<html>
+<head>
+
+</head>
+<body>
+
+<!-- 13.- Pedir por teclado una cadena de caracteres y saca un mensaje indicando si dicha
+cadena es una palabra, solamente contiene letras. -->
+<script type="text/javascript" >
+
+
+	var otros = "1234567890'¡!\"·$%&/()=?¿\\ºª|@#~½¬{[]}[]{ }·*^_:;-.,<>";
+	var cadena;
+	var noPalabra=false;
+
+	cadena= prompt('Introduce una cadena.');
+	for (var i=0; i<otros.length; i++) 
+	if (cadena.indexOf(otros.charAt(i))!=-1)
+		noPalabra=true;
+
+if (noPalabra) 
+document.write('Habia otros caracteres.');
+else
+document.write('Solo habia caracteres, es una palabra.');
+
+
+</script>
+</body>
+</html>

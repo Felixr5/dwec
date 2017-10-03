@@ -1,0 +1,36 @@
+<!-- Pedir un valor por teclado y sacar un mensaje indicando si el valor introducido se
+corresponde con una fecha, la cual puede tener uno o dos dígitos para el día, así mismo puede
+tener uno o dos dígitos para el mes y para el año va a tener dos o cuatro dígitos. Como
+separador de días, meses y años se puede utilizar el guión (-) o bien la barra de dividir (/).-->
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+	<body>
+		<script type="text/javascript" >
+		
+		var fecha;
+		var valido;
+		
+		
+		do{
+		valido=false;
+		
+		fecha = prompt("Introduce una fecha valida.");
+		
+
+
+
+		}while (fecha.length<6 || fecha.length>10 || !valido); 
+	
+
+		fecha=fecha.split("-"||"/");
+
+		
+		document.write(fecha);
+		
+		
+		</script>
+	</body>
+</html>

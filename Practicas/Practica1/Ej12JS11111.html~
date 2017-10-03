@@ -1,0 +1,41 @@
+<html>
+<head>
+
+</head>
+<!-- Pedir un número por teclado y mostrar un mensaje indicando si es un número de
+Smith. Un número de Smith es todo número natural que la suma de sus dígitos es igual a la
+suma de los dígitos de sus divisores primos (incluyendo las repeticiones de los mismo). Por
+ejemplo el número 27. 2+7= 9, el divisor del 27 es el 3 repetido 3 veces. 3+3+3=9. Por tanto el
+número 27 es un número de Smith. -->
+<body>
+<script type="text/javascript" >
+
+
+var num= prompt('Introduce un numero para verificar si es un numero de Smith.');
+
+var totaldiv=0;
+var totalsum=0;
+var k=num;
+var i=2;
+var k2=num;
+while (k>10){
+totalsum+=(k%10);
+k/=10;	
+}
+
+while (i<num/2){
+	if (k2%i==0) 
+	totaldiv+=i;
+i+=1;
+}
+
+if (totaldiv==totalsum) {
+	document.write('Es un numero de Smith');
+}
+else {
+	document.write('No es un numero de Smith.');
+}
+
+</script>
+</body>
+</html>

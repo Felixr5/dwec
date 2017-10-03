@@ -1,0 +1,39 @@
+<!--Pedir un número por teclado y mostrar un mensaje indicando si dicho número
+capicúa o bien no.-->
+<html>
+<head>
+</head>
+<body>
+<script type="text/javascript" >
+
+var numero;
+var len;
+var capi=true;
+
+	do {
+	numero=prompt("Introduce un numero para averiguar si es capicua.");
+		
+	}while (isNaN(numero));
+
+	len=numero.length-1;
+
+	for (var i=0; i<numero.length/2; i++) {
+
+		if (numero.charAt(i)!=numero.charAt(len)){
+		capi=false;
+		break;
+		}
+	
+	len-=1;
+	}
+	
+if (capi) 
+document.write('El numero '+numero+' era capicua');
+else
+document.write('El numero '+numero+' no era capicua');
+
+
+
+</script>
+</body>
+</html>
