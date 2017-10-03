@@ -7,35 +7,47 @@ Smith. Un número de Smith es todo número natural que la suma de sus dígitos e
 suma de los dígitos de sus divisores primos (incluyendo las repeticiones de los mismo). Por
 ejemplo el número 27. 2+7= 9, el divisor del 27 es el 3 repetido 3 veces. 3+3+3=9. Por tanto el
 número 27 es un número de Smith. -->
-<body>
-<script type="text/javascript" >
-
-
-var num= prompt('Introduce un numero para verificar si es un numero de Smith.');
-
-var totaldiv=0;
-var totalsum=0;
-var k=num;
-var i=2;
-var k2=num;
-while (k>10){
-totalsum+=(k%10);
-k/=10;	
+	<body>
+<script type="text/javascript">
+  function ejercicio12() {
+      var numero = prompt("Introduce un numero:");
+      var aux=numero;
+      var sumaPrimos = 0;
+      var sumaNumero=0;
+      var sumado;
+      var nString=numero.toString();
+      var iString;
+      for (var i = 0; i < nString.length; i++) {
+        sumaNumero+=parseInt(nString.charAt(i));
+      }
+      for (var i = 2; i <= aux && sumaPrimos <= sumaNumero; i++) {
+        iString=i.toString();
+        do {
+          if (aux % i == 0) {
+            if (iString.length==1) {
+              sumaPrimos += i;
+              aux/=i;
+              sumado=true;
+            } else {
+              for (var j = 0; j < iString.length; j++) {
+                sumaPrimos+=parseInt(iString.charAt(j));
+              }
+              aux/=i;
+              sumado=true;
+            }
+          } else {
+            sumado=false;
+          }
+        } while (sumado);
+      }
+      if (sumaNumero == sumaPrimos) {
+        document.write("El numero " + numero + " es Smith.");
+      } else {
+        document.write("El numero " + numero + " no es Smith.");
+      }
 }
-
-while (i<num/2){
-	if (k2%i==0) 
-	totaldiv+=i;
-i+=1;
-}
-
-if (totaldiv==totalsum) {
-	document.write('Es un numero de Smith');
-}
-else {
-	document.write('No es un numero de Smith.');
-}
-
 </script>
+
 </body>
+
 </html>
